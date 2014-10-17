@@ -6,6 +6,13 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
+		else if(text.contains("\n")){
+			for(int i = 0; i < 10; i++)
+				{
+				text = text.replace("\n", ",");
+				}
+				return sum(splitNumbers(text));
+		}
 		else if(text.contains(",")){
 			return sum(splitNumbers(text));
 		}
