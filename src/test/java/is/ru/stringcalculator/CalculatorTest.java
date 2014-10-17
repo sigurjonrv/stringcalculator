@@ -41,5 +41,9 @@ public class CalculatorTest {
     public void testNumbersBoth(){
         assertEquals(6, Calculator.add("1,2\n3"));
     }
+    @Test
+    public void testNumbersBoth2(){
+        assertEquals(13, Calculator.add("1,2\n3,4\n1\n2"));
+    }
 
 }
