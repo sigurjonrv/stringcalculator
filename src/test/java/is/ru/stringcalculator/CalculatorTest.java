@@ -66,7 +66,21 @@ public class CalculatorTest {
         {
             //
         }
-        
     }
-
+    @Test
+    public void testBigNumber(){
+        assertEquals(2, Calculator.add("1001,2"));
+}
+@Test
+    public void testBigNumber2(){
+        assertEquals(0, Calculator.add("1001,2000"));
+}
+@Test
+    public void testBigNumber3(){
+        assertEquals(2000, Calculator.add("1000,1000"));
+}
+@Test
+    public void testBigNumber4(){
+        assertEquals(5, Calculator.add("5,2000"));
+}
 }
