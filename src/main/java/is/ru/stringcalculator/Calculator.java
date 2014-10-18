@@ -6,11 +6,22 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
-		else if(text.contains("\n")){
-				text = text.replace("\n", ",");
-				return sum(splitNumbers(text));
+		if(text.startsWith("//"))
+		{
+			text = text.replaceFirst("//", "");
+			text = text.replaceFirst("\n", "");
+			text = text.replaceAll(text.substring(0, 1), ",");
+			text = text.substring(1);
+			
+
 		}
-		else if(text.contains(",")){
+		if(text.contains("\n")){
+				text = text.replaceAll("\n", ",");
+		}
+		if(text.contains(";")){
+				text = text.replaceAll(";", ",");
+		}
+		if(text.contains(",")){
 			return sum(splitNumbers(text));
 		}
 		else
