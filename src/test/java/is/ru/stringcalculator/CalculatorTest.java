@@ -67,20 +67,32 @@ public class CalculatorTest {
             //
         }
     }
+     @Test
+        public void testBigNumber(){
+            assertEquals(2, Calculator.add("1001,2"));
+    }
     @Test
-    public void testBigNumber(){
-        assertEquals(2, Calculator.add("1001,2"));
-}
-@Test
-    public void testBigNumber2(){
-        assertEquals(0, Calculator.add("1001,2000"));
-}
-@Test
-    public void testBigNumber3(){
-        assertEquals(2000, Calculator.add("1000,1000"));
-}
-@Test
-    public void testBigNumber4(){
-        assertEquals(5, Calculator.add("5,2000"));
-}
+        public void testBigNumber2(){
+            assertEquals(0, Calculator.add("1001,2000"));
+    }
+    @Test
+        public void testBigNumber3(){
+            assertEquals(2000, Calculator.add("1000,1000"));
+    }
+    @Test
+        public void testBigNumber4(){
+            assertEquals(5, Calculator.add("5,2000"));
+    }
+    @Test
+        public void testDelimeterLengt(){
+            assertEquals(6, Calculator.add("//[***]\n1***2***3"));
+    }
+    @Test
+        public void testDelimeterLengt2(){
+            assertEquals(6, Calculator.add("//[^^^^]\n1^^^^2^^^^3"));
+    }
+    @Test
+        public void testDelimeterLengt3(){
+            assertEquals(6, Calculator.add("//[aaa]\n1aaa2aaa3"));
+    }
 }
