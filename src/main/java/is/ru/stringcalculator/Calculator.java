@@ -6,14 +6,16 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
+		if(text.contains("-")){
+			
+			 throw new RuntimeException("Negatives not allowed: "); 
+		}
 		if(text.startsWith("//"))
 		{
 			text = text.replaceFirst("//", "");
 			text = text.replaceFirst("\n", "");
 			text = text.replaceAll(text.substring(0, 1), ",");
 			text = text.substring(1);
-			
-
 		}
 		if(text.contains("\n")){
 				text = text.replaceAll("\n", ",");

@@ -57,5 +57,16 @@ public class CalculatorTest {
     public void testNumberDelimiter3(){
         assertEquals(7, Calculator.add("//}\n1}2,4"));
     }
+    @Test
+    public void testNegativNumber(){
+        try
+        {
+            Calculator.add("-1,2");
+        } catch(RuntimeException ex)
+        {
+            //
+        }
+        
+    }
 
 }
